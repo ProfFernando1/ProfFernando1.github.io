@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 const youtubeUrl = 'https://www.youtube.com/channel/UCV5sKnHaw5rjRTDelp-bw4g';
 
 const projects = [
@@ -174,15 +172,15 @@ export default function Home() {
 
           <aside className="profile-card" aria-label="Resumo profissional">
             <div className="profile-topline">
-              <Image
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 className="profile-logo"
                 src="/fernando-coelho-monograma-512.png"
                 alt="Monograma FC de Fernando Coelho"
-                width={512}
-                height={512}
-                sizes="(max-width: 620px) 105px, 126px"
-                unoptimized
-                priority
+                width="512"
+                height="512"
+                loading="eager"
+                decoding="async"
               />
               <span className="profile-index">Perfil / 2026</span>
             </div>
