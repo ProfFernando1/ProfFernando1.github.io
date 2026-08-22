@@ -181,21 +181,16 @@ main { overflow: hidden; }
 
 .profile-topline { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
 
-.profile-monogram {
+.profile-logo {
   width: 126px;
   height: 126px;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex: 0 0 auto;
+  display: block;
+  object-fit: cover;
+  object-position: center;
   border: 1px solid rgba(243, 241, 233, 0.38);
   border-radius: 50%;
-  font-size: 2.4rem;
-  font-weight: 520;
-  letter-spacing: -0.08em;
 }
-
-.profile-monogram span:last-child { color: var(--acid); }
 
 .profile-index {
   color: rgba(243, 241, 233, 0.62);
@@ -496,7 +491,7 @@ footer a:hover { color: var(--acid); }
   .hero h1 { font-size: clamp(3rem, 15vw, 4.8rem); line-height: 0.91; }
   .hero-intro { margin-top: 26px; }
   .profile-card { margin-right: 8px; min-height: 430px; padding: 24px; box-shadow: 8px 8px 0 var(--acid); }
-  .profile-monogram { width: 105px; height: 105px; font-size: 2rem; }
+  .profile-logo { width: 105px; height: 105px; }
   .project-card { min-height: 330px; padding-inline: 0; }
   .education-list li { grid-template-columns: 48px 1fr; gap: 12px; }
   .areas-block li { border-radius: 16px; }

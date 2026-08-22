@@ -1,3 +1,7 @@
+import Image from 'next/image';
+
+const youtubeUrl = 'https://www.youtube.com/channel/UCV5sKnHaw5rjRTDelp-bw4g';
+
 const projects = [
   {
     number: '01',
@@ -66,11 +70,6 @@ const networks = [
     value: '0009-0005-2285-8889',
     href: 'https://orcid.org/0009-0005-2285-8889',
   },
-  {
-    label: 'GitHub',
-    value: '@ProfFernando1',
-    href: 'https://github.com/ProfFernando1',
-  },
 ];
 
 const personJsonLd = {
@@ -92,7 +91,7 @@ const personJsonLd = {
   sameAs: [
     'https://lattes.cnpq.br/1242225581138619',
     'https://orcid.org/0009-0005-2285-8889',
-    'https://github.com/ProfFernando1',
+    youtubeUrl,
   ],
   knowsAbout: [
     'Ensino de Física',
@@ -161,14 +160,30 @@ export default function Home() {
                 Currículo Lattes <span aria-hidden="true">↗</span>
                 <span className="sr-only"> (abre em nova aba)</span>
               </a>
+              <a
+                className="button button-quiet"
+                href={youtubeUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Canal no YouTube <span aria-hidden="true">↗</span>
+                <span className="sr-only"> (abre em nova aba)</span>
+              </a>
             </div>
           </div>
 
           <aside className="profile-card" aria-label="Resumo profissional">
             <div className="profile-topline">
-              <div className="profile-monogram" aria-hidden="true">
-                <span>F</span><span>C</span>
-              </div>
+              <Image
+                className="profile-logo"
+                src="/fernando-coelho-monograma-512.png"
+                alt="Monograma FC de Fernando Coelho"
+                width={512}
+                height={512}
+                sizes="(max-width: 620px) 105px, 126px"
+                unoptimized
+                priority
+              />
               <span className="profile-index">Perfil / 2026</span>
             </div>
             <div className="profile-details">
