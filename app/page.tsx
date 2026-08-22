@@ -77,7 +77,7 @@ const personJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Fernando José Vinhas Sousa Coelho',
-  url: 'https://fernando-coelho.proffernando.chatgpt.site',
+  url: 'https://proffernando1.github.io',
   jobTitle: 'Professor EBTT de Física',
   worksFor: {
     '@type': 'CollegeOrUniversity',

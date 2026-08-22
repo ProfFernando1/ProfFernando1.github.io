@@ -1,5 +1,14 @@
 import type { NextConfig } from 'next';
 
-const nextConfig: NextConfig = {};
+const isGitHubPagesBuild =
+  process.env.GITHUB_PAGES === 'true' ||
+  process.env.npm_lifecycle_event === 'build:pages';
+
+const nextConfig: NextConfig = isGitHubPagesBuild
+  ? {
+      output: 'export',
+      trailingSlash: true,
+    }
+  : {};
 
 export default nextConfig;

@@ -8,7 +8,7 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://fernando-coelho.proffernando.chatgpt.site'),
+  metadataBase: new URL('https://proffernando1.github.io'),
   title: 'Fernando Coelho | Professor de Física',
   description: 'Currículo, projetos digitais e canais de contato de Fernando José Vinhas Sousa Coelho.',
   applicationName: 'Fernando Coelho',
