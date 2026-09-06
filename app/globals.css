@@ -212,27 +212,6 @@ main { overflow: hidden; }
   color: var(--muted);
 }
 
-.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
-
-.button {
-  min-height: 48px;
-  padding: 0 20px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  border: 1px solid var(--ink);
-  border-radius: 999px;
-  font-size: 0.875rem;
-  font-weight: 680;
-  transition: transform 180ms ease, background 180ms ease, color 180ms ease;
-}
-
-.button:hover { transform: translateY(-2px); }
-.button-primary { background: var(--acid); color: var(--on-acid); }
-.button-primary:hover { background: var(--ink); color: var(--paper); }
-.button-quiet:hover { background: var(--quiet-hover); }
-
 .profile-card {
   position: relative;
   padding: 28px;
@@ -515,8 +494,6 @@ footer a:hover { color: var(--acid); }
   .hero { padding-top: 32px; padding-bottom: 48px; gap: 24px; }
   .hero h1 { font-size: clamp(2.6rem, 10vw, 4.8rem); }
   .hero-intro { margin-top: 20px; }
-  .hero-actions { gap: 10px; }
-  .hero-actions .button { padding-inline: 14px; gap: 8px; }
   .profile-card { margin-right: 8px; padding: 18px; box-shadow: 6px 6px 0 var(--acid); }
   .profile-topline { gap: 12px; }
   .profile-logo { width: 56px; height: 56px; }

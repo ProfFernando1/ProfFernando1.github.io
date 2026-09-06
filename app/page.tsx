@@ -166,20 +166,6 @@ export default function Home() {
               Professor de Física no Instituto Federal Farroupilha — Campus Frederico
               Westphalen e doutorando em Educação pela URI.
             </p>
-            <div className="hero-actions">
-              <a className="button button-primary" href="#projetos">
-                Ver projetos <span aria-hidden="true">↓</span>
-              </a>
-              <a
-                className="button button-quiet"
-                href="https://lattes.cnpq.br/1242225581138619"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Currículo Lattes <span aria-hidden="true">↗</span>
-                <span className="sr-only"> (abre em nova aba)</span>
-              </a>
-            </div>
           </div>
 
           <aside className="profile-card" aria-label="Conhecimento compartilhado">
