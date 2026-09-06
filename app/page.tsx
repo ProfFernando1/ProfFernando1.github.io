@@ -43,6 +43,11 @@ const projects = [
 
 const education = [
   {
+    year: 'Em curso',
+    title: 'Doutorado em Educação — em andamento',
+    institution: 'Universidade Regional Integrada do Alto Uruguai e das Missões · URI',
+  },
+  {
     year: '2014',
     title: 'Mestrado em Engenharia Mecânica',
     institution: 'Universidade Federal do Rio Grande do Sul · UFRGS',
@@ -145,6 +150,7 @@ export default function Home() {
             </h1>
             <p className="hero-intro">
               Professor do Instituto Federal Farroupilha — Campus Frederico Westphalen.
+              Doutorando em Educação pela URI.
               Atua em ensino de Física, Educação Profissional e Tecnológica,
               cultura maker e tecnologias educacionais.
             </p>
@@ -195,7 +201,7 @@ export default function Home() {
             <dl>
               <div>
                 <dt>Formação</dt>
-                <dd>Mestre em Engenharia Mecânica</dd>
+                <dd>Doutorando em Educação pela URI e mestre em Engenharia Mecânica</dd>
               </div>
               <div>
                 <dt>Pesquisa</dt>
@@ -252,7 +258,8 @@ export default function Home() {
             <p className="eyebrow">Currículo resumido</p>
             <h2 id="curriculo-titulo">Formação e atuação</h2>
             <p>
-              Licenciado em Física e mestre em Engenharia Mecânica pela UFRGS.
+              Doutorando em Educação pela Universidade Regional Integrada do Alto Uruguai
+              e das Missões (URI), licenciado em Física e mestre em Engenharia Mecânica pela UFRGS.
               Desde 2018, integra o quadro docente do IFFar como professor EBTT de Física.
             </p>
             <a
