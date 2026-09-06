@@ -1,3 +1,5 @@
+import ThemeToggle from './theme-toggle';
+
 const youtubeUrl = 'https://www.youtube.com/channel/UCV5sKnHaw5rjRTDelp-bw4g';
 
 const projects = [
@@ -117,6 +119,7 @@ export default function Home() {
           <span>Fernando Coelho</span>
         </a>
         <nav aria-label="Navegação principal">
+          <ThemeToggle />
           <a href="#projetos">Projetos</a>
           <a href="#curriculo">Currículo</a>
           <a href="#contato">Redes</a>

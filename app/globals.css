@@ -1,12 +1,47 @@
 @import 'tailwindcss';
 
 :root {
+  color-scheme: light;
   --paper: #f3f1e9;
   --ink: #17231f;
   --muted: #646f6a;
   --line: rgba(23, 35, 31, 0.16);
   --acid: #d9ff57;
   --white: #fffef9;
+  --deep-surface: #17231f;
+  --on-deep: #f3f1e9;
+  --on-acid: #17231f;
+  --outline-fill: rgba(23, 35, 31, 0.1);
+  --quiet-hover: rgba(255, 255, 255, 0.5);
+  --tag-surface: rgba(255, 255, 255, 0.36);
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --paper: #111a17;
+  --ink: #eef2e9;
+  --muted: #adb9b1;
+  --line: rgba(238, 242, 233, 0.2);
+  --white: #18231e;
+  --deep-surface: #0b120f;
+  --outline-fill: rgba(238, 242, 233, 0.12);
+  --quiet-hover: rgba(255, 255, 255, 0.08);
+  --tag-surface: rgba(255, 255, 255, 0.04);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+    --paper: #111a17;
+    --ink: #eef2e9;
+    --muted: #adb9b1;
+    --line: rgba(238, 242, 233, 0.2);
+    --white: #18231e;
+    --deep-surface: #0b120f;
+    --outline-fill: rgba(238, 242, 233, 0.12);
+    --quiet-hover: rgba(255, 255, 255, 0.08);
+    --tag-surface: rgba(255, 255, 255, 0.04);
+  }
 }
 
 * { box-sizing: border-box; }
@@ -51,6 +86,7 @@ main { overflow: hidden; }
 }
 
 .skip-link:focus { transform: translateY(0); }
+.skip-link { color: var(--on-acid); }
 
 :focus-visible {
   outline: 3px solid #5a7dea;
@@ -102,6 +138,28 @@ main { overflow: hidden; }
 
 .mobile-nav { display: none; }
 
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+.theme-toggle:hover { background: var(--quiet-hover); }
+.theme-toggle[aria-pressed='true'] { border-color: var(--acid); }
+.theme-toggle svg { flex-shrink: 0; }
+.theme-sun { display: none; }
+:root[data-theme='dark'] .theme-moon { display: none; }
+:root[data-theme='dark'] svg.theme-sun { display: block; }
+
 .hero {
   width: min(1180px, calc(100% - 48px));
   margin: 0 auto;
@@ -132,7 +190,7 @@ main { overflow: hidden; }
 
 .hero h1 span {
   display: block;
-  color: rgba(23, 35, 31, 0.1);
+  color: var(--outline-fill);
   -webkit-text-stroke: 1.2px var(--ink);
 }
 
@@ -161,9 +219,9 @@ main { overflow: hidden; }
 }
 
 .button:hover { transform: translateY(-2px); }
-.button-primary { background: var(--acid); }
+.button-primary { background: var(--acid); color: var(--on-acid); }
 .button-primary:hover { background: var(--ink); color: var(--paper); }
-.button-quiet:hover { background: rgba(255, 255, 255, 0.5); }
+.button-quiet:hover { background: var(--quiet-hover); }
 
 .profile-card {
   position: relative;
@@ -174,8 +232,8 @@ main { overflow: hidden; }
   justify-content: space-between;
   border: 1px solid var(--ink);
   border-radius: 34px;
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--deep-surface);
+  color: var(--on-deep);
   box-shadow: 16px 16px 0 var(--acid);
 }
 
@@ -377,15 +435,15 @@ main { overflow: hidden; }
   padding: 10px 14px;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: rgba(255,255,255,0.36);
+  background: var(--tag-surface);
   font-size: 0.75rem;
   line-height: 1.25;
 }
 
 .contact-section {
   padding: clamp(82px, 10vw, 138px) max(24px, calc((100vw - 1180px) / 2));
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--deep-surface);
+  color: var(--on-deep);
 }
 
 .contact-heading { display: grid; grid-template-columns: 0.75fr 1.2fr 0.85fr; align-items: end; gap: 48px; }
@@ -421,7 +479,7 @@ main { overflow: hidden; }
   font-size: 0.72rem;
 }
 
-.institution-link a { color: var(--paper); border-bottom: 1px solid rgba(243,241,233,0.35); padding-bottom: 4px; }
+.institution-link a { color: var(--on-deep); border-bottom: 1px solid rgba(243,241,233,0.35); padding-bottom: 4px; }
 .institution-link a:hover { color: var(--acid); }
 
 footer {
@@ -431,14 +489,14 @@ footer {
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: 24px;
-  background: var(--ink);
+  background: var(--deep-surface);
   color: rgba(243,241,233,0.58);
   border-top: 1px solid rgba(243,241,233,0.14);
   font-size: 0.67rem;
 }
 
 footer span:nth-child(2) { justify-self: center; }
-footer a { justify-self: end; color: var(--paper); }
+footer a { justify-self: end; color: var(--on-deep); }
 footer a:hover { color: var(--acid); }
 
 @media (max-width: 980px) {
