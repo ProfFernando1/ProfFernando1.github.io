@@ -17,18 +17,18 @@ const lora = Lora({
 export const metadata: Metadata = {
   metadataBase: new URL('https://proffernando1.github.io'),
   title: 'Fernando Coelho | Professor de Física',
-  description: 'Currículo, projetos digitais e canais de contato de Fernando José Vinhas Sousa Coelho.',
+  description: 'Fernando Coelho, professor de Física no IFFar e doutorando em Educação na URI. Currículo, ferramentas para estudantes e projetos de divulgação científica.',
   applicationName: 'Fernando Coelho',
   authors: [{ name: 'Fernando José Vinhas Sousa Coelho' }],
   creator: 'Fernando José Vinhas Sousa Coelho',
   alternates: { canonical: '/' },
   icons: {
     icon: [
-      { url: '/favicon.ico', sizes: 'any' },
-      { url: '/favicon.png', type: 'image/png', sizes: '512x512' },
+      { url: '/favicon.ico', sizes: '16x16 32x32 48x48' },
+      { url: '/favicon.png', type: 'image/png', sizes: '32x32' },
     ],
     shortcut: '/favicon.ico',
-    apple: [{ url: '/favicon.png', type: 'image/png', sizes: '512x512' }],
+    apple: [{ url: '/apple-icon.png', type: 'image/png', sizes: '180x180' }],
   },
   openGraph: {
     type: 'profile',
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     url: '/',
     siteName: 'Fernando Coelho',
     title: 'Fernando Coelho | Professor de Física',
-    description: 'Currículo, projetos digitais e recursos para ensino de Física, cultura maker e educação científica.',
+    description: 'Professor de Física no IFFar e doutorando em Educação na URI. Conheça o currículo e os projetos para estudantes e divulgação científica.',
     images: [
       {
         url: '/og.png',
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Fernando Coelho | Professor de Física',
-    description: 'Currículo, projetos digitais e recursos para ensino de Física, cultura maker e educação científica.',
+    description: 'Professor de Física no IFFar e doutorando em Educação na URI. Conheça o currículo e os projetos para estudantes e divulgação científica.',
     images: ['/og.png'],
   },
   formatDetection: {

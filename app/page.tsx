@@ -1,4 +1,5 @@
 import ThemeToggle from './theme-toggle';
+import CopyEmail from './copy-email';
 
 const youtubeUrl = 'https://www.youtube.com/channel/UCV5sKnHaw5rjRTDelp-bw4g';
 
@@ -11,6 +12,8 @@ const projects = [
       'Calcula a média anual, estima a nota necessária na Avaliação Integrada Anual e converte a meta em acertos.',
     href: 'https://aia-facil-iffar-fw.proffernando.chatgpt.site/',
     accent: 'lime',
+    image: '/projetos/aia-facil.webp',
+    action: 'Calcular minha média',
   },
   {
     number: '02',
@@ -20,6 +23,8 @@ const projects = [
       'Organiza o agendamento semanal dos atendimentos de recuperação de Física no contraturno.',
     href: 'https://recuperacao-paralela-fisica.proffernando.chatgpt.site/',
     accent: 'blue',
+    image: '/projetos/recuperacao-paralela.webp',
+    action: 'Agendar atendimento',
   },
   {
     number: '03',
@@ -29,6 +34,8 @@ const projects = [
       'Reúne atividade solar, manchas solares, vento solar, auroras e alertas com dados NOAA e NASA.',
     href: 'https://proffernando1.github.io/observatorios-clima/clima-espacial.html',
     accent: 'violet',
+    image: '/projetos/clima-espacial.webp',
+    action: 'Consultar atividade solar',
   },
   {
     number: '04',
@@ -38,6 +45,8 @@ const projects = [
       'Apresenta séries de temperatura, CO₂, nível do mar, gelo ártico, emissões, impactos e cenários.',
     href: 'https://proffernando1.github.io/observatorios-clima/aquecimento-global.html',
     accent: 'orange',
+    image: '/projetos/aquecimento-global.webp',
+    action: 'Explorar dados climáticos',
   },
 ];
 
@@ -67,8 +76,13 @@ const networks = [
   },
   {
     label: 'Currículo Lattes',
-    value: '1242225581138619',
+    value: 'Consultar meu currículo Lattes',
     href: 'https://lattes.cnpq.br/1242225581138619',
+  },
+  {
+    label: 'YouTube',
+    value: 'Visitar meu canal no YouTube',
+    href: youtubeUrl,
   },
   {
     label: 'ORCID',
@@ -127,9 +141,9 @@ export default function Home() {
           <ThemeToggle />
           <a href="#projetos">Projetos</a>
           <a href="#curriculo">Currículo</a>
-          <a href="#contato">Redes</a>
+          <a href="#contato">Contato e redes</a>
           <a className="nav-contact" href="mailto:fernando.coelho@iffarroupilha.edu.br">
-            Contato <span aria-hidden="true">↗</span>
+            E-mail <span aria-hidden="true">↗</span>
           </a>
         </nav>
       </header>
@@ -137,7 +151,7 @@ export default function Home() {
       <nav className="mobile-nav" aria-label="Navegação da página">
         <a href="#projetos">Projetos</a>
         <a href="#curriculo">Currículo</a>
-        <a href="#contato">Redes</a>
+        <a href="#contato">Contato</a>
       </nav>
 
       <main id="conteudo">
@@ -149,10 +163,8 @@ export default function Home() {
               <span className="name-line">Vinhas Sousa <span className="name-coelho">Coelho</span></span>
             </h1>
             <p className="hero-intro">
-              Professor do Instituto Federal Farroupilha — Campus Frederico Westphalen.
-              Doutorando em Educação pela URI.
-              Atua em ensino de Física, Educação Profissional e Tecnológica,
-              cultura maker e tecnologias educacionais.
+              Professor de Física no Instituto Federal Farroupilha — Campus Frederico
+              Westphalen e doutorando em Educação pela URI.
             </p>
             <div className="hero-actions">
               <a className="button button-primary" href="#projetos">
@@ -167,51 +179,28 @@ export default function Home() {
                 Currículo Lattes <span aria-hidden="true">↗</span>
                 <span className="sr-only"> (abre em nova aba)</span>
               </a>
-              <a
-                className="button button-quiet"
-                href={youtubeUrl}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Canal no YouTube <span aria-hidden="true">↗</span>
-                <span className="sr-only"> (abre em nova aba)</span>
-              </a>
             </div>
           </div>
 
-          <aside className="profile-card" aria-label="Resumo profissional">
+          <aside className="profile-card" aria-label="Pesquisa e projetos">
             <div className="profile-topline">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 className="profile-logo"
-                src="/fernando-coelho-monograma-512.png"
+                src="/fernando-coelho-monograma.webp"
                 alt="Monograma FC de Fernando Coelho"
-                width="512"
-                height="512"
+                width="256"
+                height="256"
                 loading="eager"
                 decoding="async"
               />
-              <span className="profile-index">Perfil / 2026</span>
+              <div>
+                <p className="profile-kicker">Pesquisa e projetos</p>
+                <strong>Educação e Ensino</strong>
+                <p className="profile-caption">Grupo de pesquisa · DGP/CNPq</p>
+              </div>
             </div>
-            <div className="profile-details">
-              <p>Atuação atual</p>
-              <strong>Professor EBTT — Física</strong>
-              <span>IFFar · Campus Frederico Westphalen</span>
-            </div>
-            <dl>
-              <div>
-                <dt>Formação</dt>
-                <dd>Doutorando em Educação pela URI e mestre em Engenharia Mecânica</dd>
-              </div>
-              <div>
-                <dt>Pesquisa</dt>
-                <dd>Grupo de pesquisa Educação e Ensino · DGP/CNPq</dd>
-              </div>
-              <div>
-                <dt>Projetos</dt>
-                <dd>Ensino, pesquisa, extensão e Laboratório IF Maker</dd>
-              </div>
-            </dl>
+            <p className="profile-summary">Ensino, pesquisa, extensão e Laboratório IF Maker.</p>
           </aside>
         </section>
 
@@ -222,8 +211,8 @@ export default function Home() {
               <h2 id="projetos-titulo">Projetos em acesso aberto</h2>
             </div>
             <p>
-              Quatro ferramentas para consulta ou uso direto. Cada cartão abre o
-              respectivo site em uma nova aba.
+              Ferramentas para estudantes e para quem quer explorar a ciência.
+              Os projetos abrem em uma nova aba.
             </p>
           </div>
 
@@ -240,12 +229,16 @@ export default function Home() {
                   <span>{project.number}</span>
                   <span>{project.kind}</span>
                 </div>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img className="project-preview" src={project.image}
+                  alt={`Prévia da interface de ${project.title}`}
+                  width="960" height="600" loading="lazy" decoding="async" />
                 <div>
                   <h3>{project.title}</h3>
                   <p>{project.description}</p>
                 </div>
                 <span className="project-link">
-                  Abrir site <span aria-hidden="true">↗</span>
+                  {project.action} <span aria-hidden="true">↗</span>
                   <span className="sr-only"> (abre em nova aba)</span>
                 </span>
               </a>
@@ -312,9 +305,8 @@ export default function Home() {
 
           <div className="network-list">
             {networks.map((network, index) => (
-              <a
-                href={network.href}
-                key={network.label}
+              <div className="network-row" key={network.label}>
+              <a href={network.href}
                 target={network.href.startsWith('mailto:') ? undefined : '_blank'}
                 rel={network.href.startsWith('mailto:') ? undefined : 'noreferrer'}
               >
@@ -326,6 +318,8 @@ export default function Home() {
                   <span className="sr-only"> (abre em nova aba)</span>
                 )}
               </a>
+              {network.href.startsWith('mailto:') && <CopyEmail />}
+              </div>
             ))}
           </div>
 
