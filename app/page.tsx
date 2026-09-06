@@ -182,7 +182,7 @@ export default function Home() {
             </div>
           </div>
 
-          <aside className="profile-card" aria-label="Pesquisa e projetos">
+          <aside className="profile-card" aria-label="Conhecimento compartilhado">
             <div className="profile-topline">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -195,12 +195,12 @@ export default function Home() {
                 decoding="async"
               />
               <div>
-                <p className="profile-kicker">Pesquisa e projetos</p>
-                <strong>Educação e Ensino</strong>
-                <p className="profile-caption">Grupo de pesquisa · DGP/CNPq</p>
+                <p className="profile-kicker">Conhecimento compartilhado</p>
+                <strong>Recursos para aprender e explorar</strong>
+                <p className="profile-caption">Física · Educação · Divulgação científica</p>
               </div>
             </div>
-            <p className="profile-summary">Ensino, pesquisa, extensão e Laboratório IF Maker.</p>
+            <p className="profile-summary">Ferramentas e projetos em acesso aberto para estudantes, professores e pessoas curiosas.</p>
           </aside>
         </section>
 
