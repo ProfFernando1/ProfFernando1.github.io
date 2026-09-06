@@ -12,7 +12,7 @@
   --on-deep: #f3f1e9;
   --on-acid: #17231f;
   --name-fernando: #496616;
-  --name-coelho: #25648a;
+  --name-coelho: var(--name-fernando);
   --name-neutral: #56635b;
   --quiet-hover: rgba(255, 255, 255, 0.5);
   --tag-surface: rgba(255, 255, 255, 0.36);
@@ -27,7 +27,7 @@
   --white: #18231e;
   --deep-surface: #0b120f;
   --name-fernando: #d9ff57;
-  --name-coelho: #8bcdf5;
+  --name-coelho: var(--name-fernando);
   --name-neutral: #e0e5dc;
   --quiet-hover: rgba(255, 255, 255, 0.08);
   --tag-surface: rgba(255, 255, 255, 0.04);
@@ -43,7 +43,7 @@
     --white: #18231e;
     --deep-surface: #0b120f;
     --name-fernando: #d9ff57;
-    --name-coelho: #8bcdf5;
+    --name-coelho: var(--name-fernando);
     --name-neutral: #e0e5dc;
     --quiet-hover: rgba(255, 255, 255, 0.08);
     --tag-surface: rgba(255, 255, 255, 0.04);
