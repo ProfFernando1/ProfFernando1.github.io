@@ -11,7 +11,9 @@
   --deep-surface: #17231f;
   --on-deep: #f3f1e9;
   --on-acid: #17231f;
-  --outline-fill: rgba(23, 35, 31, 0.1);
+  --name-fernando: #496616;
+  --name-coelho: #25648a;
+  --name-neutral: #56635b;
   --quiet-hover: rgba(255, 255, 255, 0.5);
   --tag-surface: rgba(255, 255, 255, 0.36);
 }
@@ -24,7 +26,9 @@
   --line: rgba(238, 242, 233, 0.2);
   --white: #18231e;
   --deep-surface: #0b120f;
-  --outline-fill: rgba(238, 242, 233, 0.12);
+  --name-fernando: #d9ff57;
+  --name-coelho: #8bcdf5;
+  --name-neutral: #e0e5dc;
   --quiet-hover: rgba(255, 255, 255, 0.08);
   --tag-surface: rgba(255, 255, 255, 0.04);
 }
@@ -38,7 +42,9 @@
     --line: rgba(238, 242, 233, 0.2);
     --white: #18231e;
     --deep-surface: #0b120f;
-    --outline-fill: rgba(238, 242, 233, 0.12);
+    --name-fernando: #d9ff57;
+    --name-coelho: #8bcdf5;
+    --name-neutral: #e0e5dc;
     --quiet-hover: rgba(255, 255, 255, 0.08);
     --tag-surface: rgba(255, 255, 255, 0.04);
   }
@@ -182,17 +188,17 @@ main { overflow: hidden; }
 .hero h1 {
   margin: 0;
   max-width: 790px;
-  font-size: clamp(3.4rem, 7.45vw, 7.05rem);
-  font-weight: 560;
-  line-height: 0.89;
-  letter-spacing: -0.075em;
+  font-family: var(--font-lora), Georgia, serif;
+  font-size: clamp(3rem, 6.4vw, 6.1rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  color: var(--name-neutral);
 }
 
-.hero h1 span {
-  display: block;
-  color: var(--outline-fill);
-  -webkit-text-stroke: 1.2px var(--ink);
-}
+.hero h1 .name-line { display: block; }
+.hero h1 .name-fernando { color: var(--name-fernando); }
+.hero h1 .name-coelho { color: var(--name-coelho); }
 
 .hero-intro {
   max-width: 690px;
@@ -546,7 +552,7 @@ footer a:hover { color: var(--acid); }
   .site-header { min-height: 76px; }
   .brand > span:last-child { display: none; }
   .hero { padding-top: 64px; gap: 48px; }
-  .hero h1 { font-size: clamp(3rem, 15vw, 4.8rem); line-height: 0.91; }
+  .hero h1 { font-size: clamp(2.6rem, 10vw, 4.8rem); }
   .hero-intro { margin-top: 26px; }
   .profile-card { margin-right: 8px; min-height: 430px; padding: 24px; box-shadow: 8px 8px 0 var(--acid); }
   .profile-logo { width: 105px; height: 105px; }

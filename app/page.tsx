@@ -145,8 +145,8 @@ export default function Home() {
           <div className="hero-copy">
             <p className="eyebrow">Professor EBTT de Física · IFFar</p>
             <h1>
-              Fernando José
-              <span>Vinhas Sousa Coelho</span>
+              <span className="name-fernando">Fernando</span> José{' '}
+              <span className="name-line">Vinhas Sousa <span className="name-coelho">Coelho</span></span>
             </h1>
             <p className="hero-intro">
               Professor do Instituto Federal Farroupilha — Campus Frederico Westphalen.
