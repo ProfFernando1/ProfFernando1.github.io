@@ -65,13 +65,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" suppressHydrationWarning>
+    <html lang="pt-BR" data-theme="dark" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: `(() => {
           let theme;
           try { theme = localStorage.getItem('fernando-theme'); } catch {}
-          document.documentElement.dataset.theme = theme === 'light' || theme === 'dark'
-            ? theme : matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark';
         })();` }} />
       </head>
       <body
