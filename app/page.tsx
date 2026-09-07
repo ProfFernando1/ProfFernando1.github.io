@@ -48,6 +48,19 @@ const projects = [
     image: '/projetos/aquecimento-global.webp',
     action: 'Explorar dados climáticos',
   },
+  {
+    number: '05',
+    kind: 'Aulas interativas',
+    title: 'Órbita',
+    description:
+      'Quizzes, enquetes, nuvens de palavras e termômetros ao vivo, com avatares científicos e participação dos alunos pelo celular.',
+    href: 'https://orbita-lab-fernando.proffernando.chatgpt.site/',
+    accent: 'violet',
+    image: '/projetos/orbita.webp',
+    imageAlt: 'Avatares científicos da Órbita, incluindo Einstein, Curie, Ada Lovelace e Katherine Johnson',
+    imageAspectRatio: '2 / 1',
+    action: 'Entrar na Órbita',
+  },
 ];
 
 const education = [
@@ -217,7 +230,8 @@ export default function Home() {
                 </div>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img className="project-preview" src={project.image}
-                  alt={`Prévia da interface de ${project.title}`}
+                  alt={project.imageAlt || `Prévia da interface de ${project.title}`}
+                  style={project.imageAspectRatio ? { aspectRatio: project.imageAspectRatio } : undefined}
                   width="960" height="600" loading="lazy" decoding="async" />
                 <div>
                   <h3>{project.title}</h3>
