@@ -1,5 +1,6 @@
 import ThemeToggle from './theme-toggle';
 import CopyEmail from './copy-email';
+import VisitCounter from './visit-counter';
 
 const youtubeUrl = 'https://www.youtube.com/channel/UCV5sKnHaw5rjRTDelp-bw4g';
 
@@ -341,6 +342,7 @@ export default function Home() {
         <span>© 2026 Fernando Coelho</span>
         <span>Frederico Westphalen · RS</span>
         <a href="#inicio">Voltar ao início <span aria-hidden="true">↑</span></a>
+        <VisitCounter />
       </footer>
     </>
   );
