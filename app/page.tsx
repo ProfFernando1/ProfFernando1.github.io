@@ -153,6 +153,17 @@ export default function Home() {
         </a>
         <nav aria-label="Navegação principal">
           <ThemeToggle />
+          <a
+            className="private-access"
+            href="https://doutorado-uri-fernando.proffernando.chatgpt.site/"
+            aria-label="Abrir minha área privada do doutorado"
+            title="Área privada"
+          >
+            <svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="5" y="10" width="14" height="11" rx="2" />
+              <path d="M8 10V7a4 4 0 0 1 8 0v3" />
+            </svg>
+          </a>
           <a href="#projetos">Projetos</a>
           <a href="#curriculo">Currículo</a>
           <a href="#contato">Contato e redes</a>
