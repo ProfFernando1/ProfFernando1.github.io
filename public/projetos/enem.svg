@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600">
+  <rect width="960" height="600" fill="#12211c"/>
+  <g stroke="#32443a" stroke-width="1" opacity=".65">
+    <path d="M0 100H960M0 200H960M0 300H960M0 400H960M0 500H960M120 0V600M240 0V600M360 0V600M480 0V600M600 0V600M720 0V600M840 0V600"/>
+  </g>
+  <text x="72" y="114" fill="#adc1b4" font-family="Arial, sans-serif" font-size="20" letter-spacing="4">2011 — 2025</text>
+  <text x="72" y="211" fill="#f0f3e9" font-family="Georgia, serif" font-size="76">Física no</text>
+  <text x="72" y="305" fill="#d9ff57" font-family="Georgia, serif" font-size="96">ENEM</text>
+  <g transform="translate(650 215)" fill="none" stroke="#d9ff57" stroke-width="3">
+    <circle r="95" stroke="#688458"/>
+    <path d="M-122 45Q-50 48 0 0T122-45"/>
+    <path d="M-110-66L-33-20M33 20L110 66" stroke="#92b9f7"/>
+    <circle r="13" fill="#d9ff57"/>
+    <circle cx="88" cy="-47" r="9" fill="#92b9f7" stroke="none"/>
+    <path d="M-135 0H-115M115 0H135M0-135V-115M0 115V135" stroke="#688458"/>
+  </g>
+  <path d="M72 387H888" stroke="#4e6153"/>
+  <text x="72" y="435" fill="#b9c7be" font-family="Arial, sans-serif" font-size="22">Questões oficiais. Estudo no seu ritmo.</text>
+  <g font-family="Arial, sans-serif" font-size="20" text-anchor="middle">
+    <rect x="72" y="477" width="54" height="54" rx="8" fill="#23362c" stroke="#6f836e"/><text x="99" y="512" fill="#f0f3e9">A</text>
+    <rect x="138" y="477" width="54" height="54" rx="8" fill="#23362c" stroke="#6f836e"/><text x="165" y="512" fill="#f0f3e9">B</text>
+    <rect x="204" y="477" width="54" height="54" rx="8" fill="#23362c" stroke="#6f836e"/><text x="231" y="512" fill="#f0f3e9">C</text>
+    <rect x="270" y="477" width="54" height="54" rx="8" fill="#23362c" stroke="#6f836e"/><text x="297" y="512" fill="#f0f3e9">D</text>
+    <rect x="336" y="477" width="54" height="54" rx="8" fill="#23362c" stroke="#6f836e"/><text x="363" y="512" fill="#f0f3e9">E</text>
+  </g>
+</svg>

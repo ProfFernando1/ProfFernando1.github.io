@@ -73,6 +73,17 @@ const projects = [
     imageAlt: 'Blog de Fernando Coelho: textos, ideias e conversas',
     action: 'Ler meus textos',
   },
+  {
+    number: '07',
+    kind: 'Prática de Física',
+    title: 'Física no ENEM',
+    description: 'Questões de 2011 a 2025, com filtros por conteúdo e dificuldade, recortes das provas oficiais e correção com explicação.',
+    href: '/enem/',
+    accent: 'blue',
+    image: '/projetos/enem.svg',
+    imageAlt: 'Física no ENEM: questões das provas oficiais para praticar',
+    action: 'Estudar Física',
+  },
 ];
 
 const education = [

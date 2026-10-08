@@ -12,6 +12,12 @@ Na área do autor, crie um texto, salve como rascunho ou publique. Para moderar 
 
 As rotas `route.site.ts` funcionam apenas no Sites. `next.config.ts` exclui essa extensão na exportação do GitHub Pages; o conteúdo público acessa a mesma API por HTTPS. Alterações de esquema ficam em `db/schema.ts`, com migrations geradas por `npm exec drizzle-kit generate`. O teste `node scripts/test-blog.mjs` exercita o serviço e o SQL em SQLite isolado, sem escrever na produção. Não altere migrations já aplicadas.
 
+## Banco de Física do ENEM
+
+A rota `/enem/`, acessível pelos projetos da página inicial, permite selecionar ano, conteúdo, tópico e dificuldade, responder às alternativas e consultar a explicação e as fontes oficiais. As respostas permanecem apenas na sessão do navegador.
+
+O acervo de 2011–2025 e seu banco SQLite ficam no projeto local `AULAS INTEGRADO/ENEM`. A consolidação desse projeto gera `public/enem-data/questions.json` e os recortes usados aqui. A dificuldade é uma estimativa pedagógica; os gabaritos são oficiais. Os dados públicos contêm somente questões e referências, sem informações de estudantes. Preserve as fontes e execute a consolidação completa antes de publicar atualizações do acervo.
+
 ## Desenvolvimento local
 
 Requer Node.js 22.13.0 ou superior. O arquivo `package-lock.json` fixa as dependências; use `npm ci` em instalações novas.
