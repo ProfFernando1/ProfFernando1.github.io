@@ -62,6 +62,17 @@ const projects = [
     imageAspectRatio: '2 / 1',
     action: 'Entrar na Órbita',
   },
+  {
+    number: '06',
+    kind: 'Escrita pessoal',
+    title: 'Blog pessoal',
+    description: 'Textos de minha autoria, com espaço para leitura, reações e conversa nos comentários.',
+    href: '/blog/',
+    accent: 'lime',
+    image: '/projetos/blog.svg',
+    imageAlt: 'Blog de Fernando Coelho: textos, ideias e conversas',
+    action: 'Ler meus textos',
+  },
 ];
 
 const education = [
@@ -165,6 +176,7 @@ export default function Home() {
             </svg>
           </a>
           <a href="#projetos">Projetos</a>
+          <a href="/blog/">Blog</a>
           <a href="#curriculo">Currículo</a>
           <a href="#contato">Contato e redes</a>
           <a className="nav-contact" href="mailto:fernando.coelho@iffarroupilha.edu.br">
@@ -175,6 +187,7 @@ export default function Home() {
 
       <nav className="mobile-nav" aria-label="Navegação da página">
         <a href="#projetos">Projetos</a>
+        <a href="/blog/">Blog</a>
         <a href="#curriculo">Currículo</a>
         <a href="#contato">Contato</a>
       </nav>

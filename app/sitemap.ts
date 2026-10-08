@@ -10,5 +10,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 1,
     },
+    {
+      url: 'https://proffernando1.github.io/blog/',
+      lastModified: new Date('2026-10-08'),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
   ];
 }

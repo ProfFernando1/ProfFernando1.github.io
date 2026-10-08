@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600">
+  <rect width="960" height="600" fill="#111a17"/>
+  <path d="M62 70h836M62 510h836" stroke="#536153"/>
+  <text x="68" y="122" fill="#adb9b1" font-family="Arial,sans-serif" font-size="22" letter-spacing="4">FERNANDO COELHO</text>
+  <text x="62" y="278" fill="#d9ff57" font-family="Georgia,serif" font-size="108">Blog pessoal</text>
+  <text x="68" y="354" fill="#eef2e9" font-family="Georgia,serif" font-size="34">Textos, ideias e conversas.</text>
+  <path d="M68 435h190m25 0h94" stroke="#536153" stroke-width="3"/>
+  <path d="m830 418 18-49 22 22-40 27Zm18-49 36-36 22 22-36 36" fill="none" stroke="#d9ff57" stroke-width="4" stroke-linejoin="round"/>
+</svg>

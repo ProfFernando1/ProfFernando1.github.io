@@ -8,7 +8,8 @@ const nextConfig: NextConfig = isGitHubPagesBuild
   ? {
       output: 'export',
       trailingSlash: true,
+      pageExtensions: ['tsx', 'ts'],
     }
-  : {};
+  : { pageExtensions: ['tsx', 'ts', 'site.ts'] };
 
 export default nextConfig;
