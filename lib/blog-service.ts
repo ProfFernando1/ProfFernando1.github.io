@@ -95,10 +95,13 @@ export async function handleBlog(request: Request, env: BlogEnv) {
         return respond({ posts: rows.results });
       }
       const post = await publicPost(db, path[1]);
-      const comments = await db.prepare('SELECT id, name, content, created_at, updated_at FROM blog_comments WHERE post_id = ? ORDER BY created_at ASC LIMIT 500').bind(post.id).all();
       const visitor = url.searchParams.get('visitor');
-      const reaction = visitor && uuid.test(visitor) ? await db.prepare('SELECT value FROM blog_reactions WHERE post_id = ? AND visitor_id = ?').bind(post.id, visitor).first<{ value: number }>() : null;
-      return respond({ post, comments: comments.results, reactions: await counts(db, post.id), myReaction: reaction?.value || 0 });
+      const [comments, reactions, reaction] = await Promise.all([
+        db.prepare('SELECT id, name, content, created_at, updated_at FROM blog_comments WHERE post_id = ? ORDER BY created_at ASC LIMIT 500').bind(post.id).all(),
+        counts(db, post.id),
+        visitor && uuid.test(visitor) ? db.prepare('SELECT value FROM blog_reactions WHERE post_id = ? AND visitor_id = ?').bind(post.id, visitor).first<{ value: number }>() : Promise.resolve(null),
+      ]);
+      return respond({ post, comments: comments.results, reactions, myReaction: reaction?.value || 0 });
     }
     if (path[0] === 'posts' && path[1] && request.method === 'POST') {
       const post = await publicPost(db, path[1]);

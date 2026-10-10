@@ -81,6 +81,7 @@ body {
 .blog-reactions button { display: inline-flex; gap: 12px; align-items: center; }
 .blog-reactions button[aria-pressed='true'] { border-color: var(--name-fernando); background: var(--tag-surface); box-shadow: inset 0 0 0 1px var(--name-fernando); }
 .blog-reactions span { font-variant-numeric: tabular-nums; }
+.blog-reactions .blog-reaction-emoji { font-size: 1.4rem; line-height: 1; }
 .blog-comments { border-top: 1px solid var(--line); padding-top: 26px; }
 .blog-comments h2 { font-size: 1.55rem; font-weight: 550; }
 .blog-comments ol { list-style: none; padding: 0; }

@@ -10,7 +10,13 @@ O [blog público](https://proffernando1.github.io/blog/) usa o backend do Sites 
 
 Na área do autor, crie um texto, salve como rascunho ou publique. Para moderar comentários, abra a publicação pela área do autor; os controles de editar e excluir aparecem depois do login. Reações representam a escolha de cada navegador, com uma opção ativa por texto. Os nomes dos comentários são informados pelos visitantes.
 
-As rotas `route.site.ts` funcionam apenas no Sites. `next.config.ts` exclui essa extensão na exportação do GitHub Pages; o conteúdo público acessa a mesma API por HTTPS. Alterações de esquema ficam em `db/schema.ts`, com migrations geradas por `npm exec drizzle-kit generate`. O teste `node scripts/test-blog.mjs` exercita o serviço e o SQL em SQLite isolado, sem escrever na produção. Não altere migrations já aplicadas.
+Os botões 👍 e 👎 mantêm os totais de reações e os rótulos acessíveis. O rodapé público do blog usa o contador Hits com a chave `proffernando1.github.io/blog`, compartilhada entre Sites e GitHub Pages e separada do contador da página inicial. A contagem começa na ativação; a área do autor e a prévia local não carregam o contador.
+
+No Sites, a lista e os artigos publicados chegam no HTML inicial, lidos diretamente do D1 a cada acesso. Os artigos usam `/blog/textos/ID/`; links antigos com `?texto=ID` continuam funcionando. O GitHub Pages inclui a lista pública no build, atualiza essa lista pela API ao abrir a página e aponta a leitura para os artigos no Sites, sem congelar o corpo dos textos. Edições e retirada de publicação têm efeito nas páginas dos artigos sem novo build.
+
+O texto permanece visível enquanto a API carrega reações e comentários. A consulta da sessão do autor ocorre separadamente e somente quando a página e a API têm a mesma origem. A conexão ao Sites é antecipada, e comentários e reações são consultados em paralelo após confirmar que o texto está publicado. Falhas de sessão não bloqueiam a leitura.
+
+As rotas `route.site.ts` e `page.site.ts` funcionam apenas no Sites. `next.config.ts` exclui essa extensão na exportação do GitHub Pages; o conteúdo público acessa a mesma API por HTTPS. Alterações de esquema ficam em `db/schema.ts`, com migrations geradas por `npm exec drizzle-kit generate`. O teste `node scripts/test-blog.mjs` exercita o serviço e o SQL em SQLite isolado, sem escrever na produção. Não altere migrations já aplicadas.
 
 ## Banco de Física do ENEM
 
