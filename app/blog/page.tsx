@@ -18,9 +18,9 @@ export default async function Blog({ searchParams }: { searchParams: Promise<{ t
     if (id) {
       const post = await getInitialPost(id);
       if (!post) notFound();
-      return <BlogShell showVisitCounter><BlogClient initialPost={post} /></BlogShell>;
+      return <BlogShell showVisitCounter showAuthorProfile><BlogClient initialPost={post} /></BlogShell>;
     }
   }
   const posts = await getInitialPosts();
-  return <BlogShell showVisitCounter><BlogClient initialPosts={posts} articleBase={runtimeBlog ? '/blog/textos/' : `${BLOG_ORIGIN}/blog/textos/`} /></BlogShell>;
+  return <BlogShell showVisitCounter showAuthorProfile><BlogClient initialPosts={posts} articleBase={runtimeBlog ? '/blog/textos/' : `${BLOG_ORIGIN}/blog/textos/`} /></BlogShell>;
 }

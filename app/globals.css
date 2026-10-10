@@ -53,6 +53,11 @@ body {
 .blog-heading h1 { margin: 10px 0 16px; font-family: var(--font-lora), Georgia, serif; font-size: clamp(2.5rem, 6vw, 4.3rem); font-weight: 500; letter-spacing: -0.045em; line-height: 1.12; }
 .blog-heading > p:last-of-type { color: var(--muted); font-size: 1.1rem; line-height: 1.6; }
 .blog-heading .blog-button { margin-top: 10px; }
+.author-portrait { display: block; width: 88px; height: 110px; flex: 0 0 auto; object-fit: cover; border-radius: 8px; border: 1px solid var(--line); }
+.blog-author-profile { display: grid; grid-template-columns: 88px minmax(0, 1fr); align-items: start; gap: 24px; max-width: 780px; margin-top: 64px; padding-top: 32px; border-top: 1px solid var(--line); }
+.blog-author-bio .eyebrow { margin: 0 0 10px; color: var(--muted); font-size: 0.7rem; letter-spacing: 0.12em; }
+.blog-author-bio h2 { margin: 0; font-family: var(--font-lora), Georgia, serif; font-size: 1.4rem; font-weight: 500; letter-spacing: -0.02em; line-height: 1.35; }
+.blog-author-biography { margin: 16px 0 0; color: var(--muted); font-size: 0.925rem; line-height: 1.8; }
 .blog-muted, .blog-byline, .blog-entry time, .blog-article time, .blog-comment-meta time { color: var(--muted); }
 .blog-entry { max-width: 780px; padding: 32px 0; border-bottom: 1px solid var(--line); }
 .blog-entry:first-child { padding-top: 4px; }
@@ -282,11 +287,14 @@ main { overflow: hidden; }
 
 .hero-intro {
   max-width: 690px;
-  margin: 24px 0 0;
+  margin: 0;
   font-size: clamp(1rem, 1.6vw, 1.24rem);
   line-height: 1.62;
   color: var(--muted);
 }
+
+.hero-introduction { display: flex; align-items: center; gap: 22px; margin-top: 28px; }
+.hero-portrait { width: 96px; height: 120px; }
 
 .profile-card {
   position: relative;
@@ -579,7 +587,12 @@ footer .visit-counter img { display: block; height: 24px; width: auto; max-width
   .brand > span:last-child { display: none; }
   .hero { padding-top: 32px; padding-bottom: 48px; gap: 24px; }
   .hero h1 { font-size: clamp(2.6rem, 10vw, 4.8rem); }
-  .hero-intro { margin-top: 20px; }
+  .hero-introduction { gap: 16px; margin-top: 24px; align-items: flex-start; }
+  .hero-portrait { width: 80px; height: 100px; }
+  .blog-author-profile { gap: 20px 16px; margin-top: 48px; padding-top: 24px; }
+  .blog-author-bio { display: contents; }
+  .blog-author-heading { align-self: center; }
+  .blog-author-biography { grid-column: 1 / -1; margin: 0; }
   .profile-card { margin-right: 8px; padding: 18px; box-shadow: 6px 6px 0 var(--acid); }
   .profile-topline { gap: 12px; }
   .profile-logo { width: 56px; height: 56px; }

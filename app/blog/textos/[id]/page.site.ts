@@ -25,5 +25,5 @@ export default async function Article({ params }: Props) {
   const { id } = await params;
   const post = await getInitialPost(id);
   if (!post) notFound();
-  return createElement(BlogShell, { showVisitCounter: true }, createElement(BlogClient, { initialPost: post }));
+  return createElement(BlogShell, { showVisitCounter: true, showAuthorProfile: true }, createElement(BlogClient, { initialPost: post }));
 }

@@ -4,6 +4,8 @@ Hub profissional com currículo, redes, contato institucional e acesso aos proje
 
 Página pública: [proffernando1.github.io](https://proffernando1.github.io/)
 
+O retrato profissional aparece em tamanho discreto ao lado da apresentação inicial. O blog público também inclui a foto e a biografia fornecida por Fernando em “Sobre o autor”, depois do conteúdo de leitura. As cópias WebP locais usam tamanhos responsivos, sem depender de processamento de imagem no servidor. Preserve o arquivo original da fotografia.
+
 ## Blog pessoal
 
 O [blog público](https://proffernando1.github.io/blog/) usa o backend do Sites para guardar textos, comentários e reações no D1. A [área do autor](https://fernando-coelho.proffernando.chatgpt.site/blog/autor/) exige login com a conta ChatGPT proprietária; a variável de servidor `BLOG_OWNER_EMAIL` determina a autorização em cada operação. `BLOG_RATE_SALT` protege os identificadores usados no limite de envio. Ambas são segredos de execução configurados no Sites e não entram no repositório.

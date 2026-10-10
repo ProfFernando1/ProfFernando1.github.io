@@ -1,6 +1,7 @@
 import ThemeToggle from './theme-toggle';
 import CopyEmail from './copy-email';
 import VisitCounter from './visit-counter';
+import Portrait from './portrait';
 
 const youtubeUrl = 'https://www.youtube.com/channel/UCV5sKnHaw5rjRTDelp-bw4g';
 
@@ -211,10 +212,13 @@ export default function Home() {
               <span className="name-fernando">Fernando</span> José{' '}
               <span className="name-line">Vinhas Sousa <span className="name-coelho">Coelho</span></span>
             </h1>
-            <p className="hero-intro">
-              Professor de Física no Instituto Federal Farroupilha — Campus Frederico
-              Westphalen e doutorando em Educação pela URI.
-            </p>
+            <div className="hero-introduction">
+              <Portrait hero />
+              <p className="hero-intro">
+                Professor de Física no Instituto Federal Farroupilha — Campus Frederico
+                Westphalen e doutorando em Educação pela URI.
+              </p>
+            </div>
           </div>
 
           <aside className="profile-card" aria-label="Conhecimento compartilhado">
