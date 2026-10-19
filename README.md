@@ -26,6 +26,14 @@ A rota `/enem/`, acessível pelos projetos da página inicial, permite seleciona
 
 O acervo de 2011–2025 e seu banco SQLite ficam no projeto local `AULAS INTEGRADO/ENEM`. A consolidação desse projeto gera `public/enem-data/questions.json` e os recortes usados aqui. A dificuldade é uma estimativa pedagógica; os gabaritos são oficiais. Os dados públicos contêm somente questões e referências, sem informações de estudantes. Preserve as fontes e execute a consolidação completa antes de publicar atualizações do acervo.
 
+## Física no PSS da UFSM
+
+A rota `/pss/`, também acessível pelos projetos da página inicial, organiza questões de Física por etapa do ensino médio, edição, programa, conteúdo, subtópico e dificuldade. Inclui o PSS atual de 2024–2026 e o acervo histórico do PSS/PEIES identificado nas fontes oficiais, com recortes ampliáveis, respostas e explicações.
+
+O ano da edição e o ano escolar são filtros diferentes. A dificuldade é editorial e os gabaritos são oficiais. Questões anuladas não recebem correção. Aplicações históricas e repetições entre cadernos são identificadas; não se afirma que o acervo contenha toda a história da seleção.
+
+As fontes, os hashes dos originais e o inventário estão em `public/pss-data/`. A [documentação do banco](data/pss/README.md) descreve a curadoria, as limitações do OCR e os comandos para reconstruir e conferir o acervo.
+
 ## Desenvolvimento local
 
 Requer Node.js 22.13.0 ou superior. O arquivo `package-lock.json` fixa as dependências; use `npm ci` em instalações novas.

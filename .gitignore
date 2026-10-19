@@ -41,3 +41,7 @@ next-env.d.ts
 
 # Windows folder metadata
 desktop.ini
+
+# Python tooling for the question-bank pipeline
+__pycache__/
+*.pyc

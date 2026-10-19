@@ -85,6 +85,17 @@ const projects = [
     imageAlt: 'Física no ENEM: questões das provas oficiais para praticar',
     action: 'Estudar Física',
   },
+  {
+    number: '08',
+    kind: 'Seleção seriada · UFSM',
+    title: 'Física no PSS da UFSM',
+    description: 'Questões das provas oficiais organizadas por etapa do ensino médio, edição, conteúdo e dificuldade, com acervo histórico e correção.',
+    href: '/pss/',
+    accent: 'lime',
+    image: '/projetos/pss.svg',
+    imageAlt: 'Física no PSS da UFSM: três etapas para estudar no seu ritmo',
+    action: 'Estudar para o PSS',
+  },
 ];
 
 const education = [

@@ -22,5 +22,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.8,
     },
+    {
+      url: 'https://proffernando1.github.io/pss/',
+      lastModified: new Date('2026-10-19'),
+      changeFrequency: 'yearly',
+      priority: 0.8,
+    },
   ];
 }
