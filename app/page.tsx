@@ -2,6 +2,7 @@ import ThemeToggle from './theme-toggle';
 import CopyEmail from './copy-email';
 import VisitCounter from './visit-counter';
 import Portrait from './portrait';
+import ProjectMotionCover from './project-motion-cover';
 
 const youtubeUrl = 'https://www.youtube.com/channel/UCV5sKnHaw5rjRTDelp-bw4g';
 
@@ -82,6 +83,8 @@ const projects = [
     href: '/enem/',
     accent: 'blue',
     image: '/projetos/enem.svg',
+    motionPoster: '/projetos/enem-motion.webp',
+    motionVideo: '/projetos/enem-motion.mp4',
     imageAlt: 'Física no ENEM: questões das provas oficiais para praticar',
     action: 'Estudar Física',
   },
@@ -93,6 +96,8 @@ const projects = [
     href: '/pss/',
     accent: 'lime',
     image: '/projetos/pss.svg',
+    motionPoster: '/projetos/pss-motion.webp',
+    motionVideo: '/projetos/pss-motion.mp4',
     imageAlt: 'Física no PSS da UFSM: três etapas para estudar no seu ritmo',
     action: 'Estudar para o PSS',
   },
@@ -279,11 +284,16 @@ export default function Home() {
                   <span>{project.number}</span>
                   <span>{project.kind}</span>
                 </div>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img className="project-preview" src={project.image}
-                  alt={project.imageAlt || `Prévia da interface de ${project.title}`}
-                  style={project.imageAspectRatio ? { aspectRatio: project.imageAspectRatio } : undefined}
-                  width="960" height="600" loading="lazy" decoding="async" />
+                {project.motionVideo && project.motionPoster ? (
+                  <ProjectMotionCover source={project.motionVideo} poster={project.motionPoster}
+                    alt={project.imageAlt || project.title} />
+                ) : (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img className="project-preview" src={project.image}
+                    alt={project.imageAlt || `Prévia da interface de ${project.title}`}
+                    style={project.imageAspectRatio ? { aspectRatio: project.imageAspectRatio } : undefined}
+                    width="960" height="600" loading="lazy" decoding="async" />
+                )}
                 <div>
                   <h3>{project.title}</h3>
                   <p>{project.description}</p>

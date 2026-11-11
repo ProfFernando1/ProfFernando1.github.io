@@ -380,6 +380,24 @@ main { overflow: hidden; }
   border-radius: 12px;
 }
 .project-card:hover .project-preview { border-color: var(--card-accent); }
+.project-preview-motion {
+  position: relative;
+  overflow: hidden;
+}
+.project-preview-motion img,
+.project-preview-motion video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+.project-preview-motion video { opacity: 0; }
+.project-preview-motion video.is-visible { opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .project-preview-motion video.is-visible { opacity: 0; }
+}
 .project-card.lime { --card-accent: #9ac81a; }
 .project-card.blue { --card-accent: #3568e6; }
 .project-card.violet { --card-accent: #7e5be8; }
