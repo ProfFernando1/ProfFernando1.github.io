@@ -10,7 +10,8 @@
     "build": "vinext build",
     "build:pages": "next build && node scripts/redirect-legacy-pages.mjs",
     "start": "vinext start",
-    "lint": "eslint . --ignore-pattern dist --ignore-pattern .next"
+    "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
+    "typecheck": "next typegen && tsc --noEmit"
   },
   "dependencies": {
     "drizzle-orm": "^0.45.3",

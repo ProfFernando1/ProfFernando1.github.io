@@ -34,6 +34,14 @@ O ano da edição e o ano escolar são filtros diferentes. A dificuldade é edit
 
 As fontes, os hashes dos originais e o inventário estão em `public/pss-data/`. A [documentação do banco](data/pss/README.md) descreve a curadoria, as limitações do OCR e os comandos para reconstruir e conferir o acervo.
 
+## Concursos TAE no RS
+
+O [caderno de concursos TAE](https://fernando-coelho.proffernando.chatgpt.site/concursos-tae) reúne provas do IFFar, do IFRS e do IFSul. O Worker usa `BUCKET` (R2) para consultar questões e originais e `DB` (D1) para o histórico de quem estuda com a conta ChatGPT. O visitante pode estudar e acompanhar o placar temporário na aba.
+
+Na exportação do GitHub Pages, `npm run build:pages` cria a entrada `/concursos-tae/` com redirecionamento ao Sites. Links de questão, filtros e aba conservam a consulta e o fragmento. A entrada no GitHub Pages indica o endereço canônico do Sites e usa `noindex,follow`. A página pública do caderno no Sites é o endereço destinado aos buscadores.
+
+Para conferir o acervo, execute `node scripts/check-tae-index.mjs`. Para testar a fila, o histórico e a pontuação com um perfil em SQLite local, execute `node scripts/test-tae-progress.mjs`.
+
 ## Desenvolvimento local
 
 Requer Node.js 22.13.0 ou superior. O arquivo `package-lock.json` fixa as dependências; use `npm ci` em instalações novas.
