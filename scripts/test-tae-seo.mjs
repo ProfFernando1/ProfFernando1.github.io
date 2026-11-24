@@ -18,6 +18,8 @@ const { GET, HEAD, sitemap, handleStudy } = await import('data:text/javascript;b
 const canonical = 'https://fernando-coelho.proffernando.chatgpt.site/concursos-tae';
 const entry = 'http://localhost/concursos-tae';
 const user = { 'oai-authenticated-user-id': 'aluno-ficticio' };
+const seenNonces = new Set();
+const expectedPolicy = "default-src 'self'; script-src 'self' 'nonce-EXPECTED'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'self'";
 for (const [suffix, headers, visible] of [
   ['', {}, true], ['/', {}, true], ['?', {}, false], ['?mode=visitante', {}, false],
   ['?mode=conta', {}, false], ['?questao=exemplo', {}, false], ['?role=Contador', {}, false],
@@ -38,12 +40,29 @@ for (const [suffix, headers, visible] of [
     assert.equal(response.headers.get('Link'), visible ? '<' + canonical + '>; rel="canonical"' : null);
     assert.equal(response.headers.get('Cache-Control'), 'private, no-store');
     assert.match(response.headers.get('Vary'), /oai-authenticated-user-id/i);
-    assert.match(response.headers.get('Content-Security-Policy'), /script-src 'self';/);
+    const policy = response.headers.get('Content-Security-Policy');
+    const nonce = policy?.match(/'nonce-([A-Za-z0-9+/]+={0,2})'/)?.[1];
+    assert.ok(nonce && Buffer.from(nonce, 'base64').length >= 16, 'CSP requires a 128-bit or longer nonce');
+    assert.equal(policy.replace("'nonce-" + nonce + "'", "'nonce-EXPECTED'"), expectedPolicy);
+    assert.ok(!seenNonces.has(nonce), 'Each GET and HEAD must issue its own nonce');
+    seenNonces.add(nonce);
+    if (response === html) {
+      const scripts = [...body.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g)];
+      const sources = scripts.map(([, attributes, code]) => {
+        assert.equal(code.trim(), '', 'The application serves external scripts only');
+        assert.equal(attributes.match(/\bnonce="([^"]+)"/)?.[1], nonce);
+        return attributes.match(/\bsrc="([^"]+)"/)?.[1];
+      });
+      assert.deepEqual(sources, ['/concursos-tae/static/theme.js', '/concursos-tae/static/app.js']);
+    }
   }
 }
-const listed = sitemap().map(item => item.url).filter(url => new URL(url).pathname.startsWith('/concursos-tae'));
-// The Pages sitemap lists mirrors on github.io. Only the public Sites entry is indexable.
-assert.deepEqual(listed, []);
+const urls = sitemap().map(item => new URL(item.url));
+const homeOrigin = urls.find(url => url.pathname === '/')?.origin;
+const sitesOrigin = new URL(canonical).origin;
+assert.ok([sitesOrigin, 'https://proffernando1.github.io'].includes(homeOrigin), 'Expected a known sitemap origin');
+const listed = urls.filter(url => url.pathname.startsWith('/concursos-tae')).map(url => url.href);
+assert.deepEqual(listed, homeOrigin === sitesOrigin ? [canonical] : []);
 
 const media = { type: 'application/pdf', length: 40, segments: [] };
 const index = { version: 1, packs: [], files: { 'media/prova.pdf': media }, pages: { teste: [media] } };

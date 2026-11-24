@@ -4,7 +4,7 @@ import { BLOG_ORIGIN as SITE_ORIGIN } from '../blog-config';
 const format = new Intl.NumberFormat('pt-BR');
 export const studyCanonical = SITE_ORIGIN + '/concursos-tae';
 
-export function studyShell(anonymous: boolean, indexable: boolean) {
+export function studyShell(anonymous: boolean, indexable: boolean, nonce: string) {
   return `<!doctype html>
 <html lang="pt-BR" data-theme="dark"${anonymous ? ' data-public-entry="' + studyCanonical + '"' : ''}>
 <head>
@@ -14,9 +14,9 @@ export function studyShell(anonymous: boolean, indexable: boolean) {
   <meta name="description" content="Caderno de estudos para concursos técnico-administrativos dos institutos federais do Rio Grande do Sul.">
   <title>Concursos TAE · Caderno de Fernando Coelho</title>
   <link rel="icon" type="image/png" href="/favicon.png">
-  <script src="/concursos-tae/static/theme.js"></script>
+  <script nonce="${nonce}" src="/concursos-tae/static/theme.js"></script>
   <link rel="stylesheet" href="/concursos-tae/static/styles.css">
-  <script src="/concursos-tae/static/app.js" type="module"></script>
+  <script nonce="${nonce}" src="/concursos-tae/static/app.js" type="module"></script>
 </head>
 <body>
 <a class="skip" href="#principal">Pular para o conteúdo</a>
